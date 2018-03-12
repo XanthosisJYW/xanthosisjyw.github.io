@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="本文不是一份完整 &amp;amp; 系统的统计学习入门指南. 笔者选择了三个简单的统计学习方法, 意在通过蜻蜓点水式的介绍, 让工程师对于统计学习有一些初步的感性认知.
+在统计学习的各个分支, Python 语言是工业界目前的事实标准之一. 所以后文的例子也将通过 Python 来实现. (仓库地址)
+因">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Xanthosis">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="统计学习初探"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Xanthosis&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>统计学习初探 - Xanthosis&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Xanthosis's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/XanthosisJYW">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>统计学习初探</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-03-12
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/statistical-learning/">#statistical learning</a> <a href="/tags/统计学习/">#统计学习</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>本文不是一份完整 &amp; 系统的统计学习入门指南. 笔者选择了三个简单的统计学习方法, 意在通过蜻蜓点水式的介绍, 让工程师对于统计学习有一些初步的感性认知.</p>
+<p>在统计学习的各个分支, <code>Python</code> 语言是工业界目前的事实标准之一. 所以后文的例子也将通过 <code>Python</code> 来实现. (<a href="https://github.com/XanthosisJYW/head-first-statistical-learning" target="_blank" rel="external">仓库地址</a>)</p>
+<p>因为本文涉及的内容极其有限, 对于想要进一步深入统计学习的读者, 可以考虑阅读 <a href="https://book.douban.com/subject/26430936/" target="_blank" rel="external"><em>统计学习导论</em></a> 一书. 这本书降低了数学上的门槛, 对于抱着应用目的的读者更为友善.</p>
+<h2 id="1-线性回归及其他"><a href="#1-线性回归及其他" class="headerlink" title="1. 线性回归及其他"></a>1. 线性回归及其他</h2><p>线性回归 (Linear Regression) 是大部分统计学习教材的入门第一课, 那到底什么是线性回归呢?</p>
+<p>简单来说, 所有的统计学习都希望通过学习这一手段来估计 / 推断 / 拟合相应的模型. 而线性回归的模型便是以线性的表达式为基础的.</p>
+<p>这么说比较抽象, 我们来看一个例子, 这里的数据反映的是不同媒介上的广告投入与最终销量之间的关系.</p>
+<p><img src="/figures/sales_tv.png" alt="Relation between Sales and TV Ads"></p>
+<p>上图中, 蓝色点是原始数据, 表示电视广告的投放与销量之间的关系. 而红色直线是计算得出的线性模型. 在 2 维平面上, 直线所表达的就是线性关系.</p>
+<p><img src="/figures/sales_tv_radio.png" alt="Relation between Sales and TV &amp; Radio Ads"></p>
+<p>更进一步, 对于高维空间 (这里以 3 维为例子), 蓝色点表示的是电视 &amp; 广播广告与销量之间的关系. 而浅红色的平面则是计算得出的线性模型. 在 3 维空间中, 平面所表达的也是一种线性关系.</p>
+<h3 id="1-1-线性回归的形式"><a href="#1-1-线性回归的形式" class="headerlink" title="1.1 线性回归的形式"></a>1.1 线性回归的形式</h3><p>线性回归的模型可以表示成如下的一般形式,</p>
+<p>$$<br>Y = \alpha X + \beta<br>$$</p>
+<p>其中, $X$, $Y$ 和 $\beta$ 可以是向量, 而 $\alpha$ 可以是矩阵.</p>
+<p>但目前, 为了简单起见, 我们将该式子直接视为一元的表达式. 而我们所要做的就是通过已知的 $X$ 和 $Y$, 求得 $\alpha$ 和 $\beta$ 的值.</p>
+<p>只要得到 $\alpha$ 和 $\beta$ 的值, 我们就可以复原整个表达式. 进而得到 $X$ 和 $Y$ 之间明确的关系.</p>
+<h3 id="1-2-线性回归的方法"><a href="#1-2-线性回归的方法" class="headerlink" title="1.2 线性回归的方法"></a>1.2 线性回归的方法</h3><p>上一节提到了, 我们想要知道 $\alpha$ 和 $\beta$ 的值. 为此, 我们常使用 <strong>最小二乘法 (Least Squares)</strong>. 具体的数学细节不在此展开, 可以参阅如下 <a href="https://www.wikiwand.com/zh-cn/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95" target="_blank" rel="external">Wiki 词条</a> 获得进一步的信息.</p>
+<p>即便不知道具体的数学细节, 我们也可以通过 Python 库的既有方法来计算结果. 下面, 我们就以本文的第一张图为例, 看下计算的结果.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">                            OLS Regression Results                            </div><div class="line">==============================================================================</div><div class="line">Dep. Variable:                  Sales   R-squared:                       0.612</div><div class="line">Model:                            OLS   Adj. R-squared:                  0.610</div><div class="line">Method:                 Least Squares   F-statistic:                     312.1</div><div class="line">Date:                Sun, 11 Mar 2018   Prob (F-statistic):           1.47e-42</div><div class="line">Time:                        16:56:16   Log-Likelihood:                -519.05</div><div class="line">No. Observations:                 200   AIC:                             1042.</div><div class="line">Df Residuals:                     198   BIC:                             1049.</div><div class="line">Df Model:                           1                                         </div><div class="line">Covariance Type:            nonrobust                                         </div><div class="line">==============================================================================</div><div class="line">                 coef    std err          t      P&gt;|t|      [0.025      0.975]</div><div class="line">------------------------------------------------------------------------------</div><div class="line">Intercept      7.0326      0.458     15.360      0.000       6.130       7.935</div><div class="line">TV             0.0475      0.003     17.668      0.000       0.042       0.053</div><div class="line">==============================================================================</div><div class="line">Omnibus:                        0.531   Durbin-Watson:                   1.935</div><div class="line">Prob(Omnibus):                  0.767   Jarque-Bera (JB):                0.669</div><div class="line">Skew:                          -0.089   Prob(JB):                        0.716</div><div class="line">Kurtosis:                       2.779   Cond. No.                         338.</div><div class="line">==============================================================================</div></pre></td></tr></table></figure>
+<p>其中 <code>Intercept</code> 表示截距, 也就是 $\beta$ 的值为 <code>7.0326</code>, 而 <code>TV</code> 对应电视的系数, 也就是 $\alpha$ 的值为 <code>0.0475</code>. 通过这两个值, 我们就可以还原一条直线. 也就是第一幅图中的红色直线. 同时也可以进一步利用模型进行预测.</p>
+<p>原则上, 我们只需要这两个值就够了. 但结果中还有一个值需要留意, 也就是 <code>P&gt;|t|</code>. 简单来说, 这个值表示我们获得参数靠不靠谱, 值越接近 0 越靠谱.</p>
+<h3 id="1-3-多元线性回归"><a href="#1-3-多元线性回归" class="headerlink" title="1.3 多元线性回归"></a>1.3 多元线性回归</h3><p>因为例子中的数据其实是高维的, 我们有理由猜测, 可能一元 (单变量) 的形式不足以完整反映模型的实质. 下面, 我们看一看把电视, 广播 和 报纸统统纳入分析的结果.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">                            OLS Regression Results                            </div><div class="line">==============================================================================</div><div class="line">Dep. Variable:                  Sales   R-squared:                       0.897</div><div class="line">Model:                            OLS   Adj. R-squared:                  0.896</div><div class="line">Method:                 Least Squares   F-statistic:                     570.3</div><div class="line">Date:                Sun, 11 Mar 2018   Prob (F-statistic):           1.58e-96</div><div class="line">Time:                        16:56:18   Log-Likelihood:                -386.18</div><div class="line">No. Observations:                 200   AIC:                             780.4</div><div class="line">Df Residuals:                     196   BIC:                             793.6</div><div class="line">Df Model:                           3                                         </div><div class="line">Covariance Type:            nonrobust                                         </div><div class="line">==============================================================================</div><div class="line">                 coef    std err          t      P&gt;|t|      [0.025      0.975]</div><div class="line">------------------------------------------------------------------------------</div><div class="line">Intercept      2.9389      0.312      9.422      0.000       2.324       3.554</div><div class="line">TV             0.0458      0.001     32.809      0.000       0.043       0.049</div><div class="line">Radio          0.1885      0.009     21.893      0.000       0.172       0.206</div><div class="line">Newspaper     -0.0010      0.006     -0.177      0.860      -0.013       0.011</div><div class="line">==============================================================================</div><div class="line">Omnibus:                       60.414   Durbin-Watson:                   2.084</div><div class="line">Prob(Omnibus):                  0.000   Jarque-Bera (JB):              151.241</div><div class="line">Skew:                          -1.327   Prob(JB):                     1.44e-33</div><div class="line">Kurtosis:                       6.332   Cond. No.                         454.</div><div class="line">==============================================================================</div></pre></td></tr></table></figure>
+<p>这里我们可以看到, <code>Newspaper</code> 所对应的 <code>P&gt;|t|</code> 高的离谱. 实际上, 报纸对销量所起的作用及其有限, 因为报纸和广播的相关性极大.</p>
+<p>通过下面两张图可以非常直观的看出问题.</p>
+<p><img src="/figures/radio_tv_correlation.png" alt="Correlation between Radio and TV"></p>
+<p>从这张图我们可以看出, 电视和广播之间没有太大的关联.</p>
+<p><img src="/figures/radio_newspaper_correlation.png" alt="Correlation between Radio and Newspaper"></p>
+<p>但这张图则不同, 可以看到广播和报纸之间有着不小的关联.</p>
+<p>这部分的关联也可以通过相关系数矩阵发现.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">           Newspaper     Radio        TV</div><div class="line">Newspaper   1.000000  0.354104  0.056648</div><div class="line">Radio       0.354104  1.000000  0.054809</div><div class="line">TV          0.056648  0.054809  1.000000</div></pre></td></tr></table></figure>
+<h3 id="1-4-线性回归的局限"><a href="#1-4-线性回归的局限" class="headerlink" title="1.4 线性回归的局限"></a>1.4 线性回归的局限</h3><p>到这里, 我们对于线性回归的介绍就告一段落了. 线性回归模型简单, 易解释的特点使他成为了多数此类教材的首选知识点.</p>
+<p>但线性回归也有着自己的局限, 那就是不适用于分类. 我们可以在获得各个系数之后对给定的输入预测输出, 但我们很难通过输出直接判定结果的分类.</p>
+<p>而逻辑斯谛回归 (Logistic Regression) 则很好的胜任了分类的任务, 感兴趣的可以自行查阅相关的材料.</p>
+<h2 id="2-决策树"><a href="#2-决策树" class="headerlink" title="2. 决策树"></a>2. 决策树</h2><p>决策树 (Decition Tree) 也是一种非常常用的模型. 这里我们主要介绍决策树中的分类树.</p>
+<p>顾名思义, 分类树就是通过树状的条件判断, 最终决定输入的分类. 转换成代码就是一系列 <code>IF-ELSE</code> 判断.</p>
+<p>下图是一个基于天平的例子. 主要有四个变量, 天平左右两端的重量, 左右两臂的距离. 这些变量最终决定了天平是向左 / 右倾斜, 还是平衡.</p>
+<p><img src="/figures/decision_tree.png" alt="Correlation between Radio and TV"></p>
+<p>可以从图中看出, 每个节点会对其中一个属性做条件判断, 然后分流如下一级的节点. 最后在叶子节点确定最终的分类.</p>
+<h3 id="2-1-分类方法"><a href="#2-1-分类方法" class="headerlink" title="2.1 分类方法"></a>2.1 分类方法</h3><p>分类的方法很多, 常见的可以通过如下方法分类:</p>
+<ul>
+<li>错误率</li>
+<li>基尼系数 (Gini Index)</li>
+<li>信息熵 (Information Entropy)</li>
+</ul>
+<p>这里我们简要介绍基于信息熵的分类方法. 关于信息熵的背景信息, 可以查阅如下的 <a href="https://www.wikiwand.com/zh-cn/%E7%86%B5_(%E4%BF%A1%E6%81%AF%E8%AE%BA" target="_blank" rel="external">Wiki 词条</a>).</p>
+<p>先给出信息熵的公式</p>
+<p>$$<br>H = -\sum p_k (x) \log_2 p_k(x)<br>$$</p>
+<p>其中 $p_k (x)$ 是类别为 $k$ 的样本在当前数据中的比例.</p>
+<p>假设我们如下的已知关于猕猴桃好不好吃的数据, 他们的信息熵该怎么计算呢?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">编号 | 甜    | 涩    | 分类</div><div class="line">--- | ----- | ----- | -----</div><div class="line">1   | True  | True  | 不好吃</div><div class="line">2   | True  | False | 好吃</div><div class="line">3   | True  | False | 好吃</div><div class="line">4   | False | True  | 不好吃</div><div class="line">5   | False | True  | 不好吃</div></pre></td></tr></table></figure>
+<p>由公式可知, 目前的信息熵是</p>
+<p>$$<br>- \frac{2}{5} \log_2 \frac{2}{5} - \frac{3}{5} \log_2 \frac{3}{5} = 0.97<br>$$</p>
+<p>那下一步我们以哪个属性作为分类基准比较好呢? 如果以甜不甜作为分类依据, 则甜的猕猴桃的信息熵为</p>
+<p>$$<br>- \frac{1}{3} \log_2 \frac{1}{3} - \frac{2}{3} \log_2 \frac{2}{3} = 0.91<br>$$</p>
+<p>不甜的猕猴桃信息熵为</p>
+<p>$$<br>- \frac{0}{2} \log_2 \frac{0}{2} - \frac{2}{2} \log_2 \frac{2}{2} = 0<br>$$</p>
+<p>合起来总的信息熵为</p>
+<p>$$<br>\frac{3}{5} * 0.91 + \frac{2}{5} * 0 = 0.55<br>$$</p>
+<p>那么以甜不甜作为分类基准, 我们获得了</p>
+<p>$$<br>0.97 - 0.55 = 0.42<br>$$</p>
+<p>的信息熵增益.</p>
+<p>同样的, 我们可以以涩不涩为分类基准, 我们最终将获得</p>
+<p>$$<br>0.97 - 0.0 = 0.97<br>$$</p>
+<p>的信息熵增益.</p>
+<p>如此看来, 我们以涩不涩作为第一次分类的标准非常合适. 以此类推到后续的分类, 乃至更更为复杂的分类状况, 如天平的例子, 我们一样可以完成分类.</p>
+<p>决策树的例子就讲到这里. 事实上, 决策树还有其他的变种, 感兴趣的可以自行检索.</p>
+<h2 id="3-主成分分析-PCA"><a href="#3-主成分分析-PCA" class="headerlink" title="3. 主成分分析 (PCA)"></a>3. 主成分分析 (PCA)</h2><p>最后要介绍的是主成分分析 (Principal Components Analysis), 这是一种在数据科学 / 统计学习中非常常用的技术. 为了避免困扰, 这部分我不会提及任何数学公式.</p>
+<p>现实世界中, 采集回来的数据往往是高维的. 而机器的算力往往不足以支持这么多维度的数据. 面对这样的状况, 我们自然而然想到了降维, 因为有些维度上的数据并不重要.</p>
+<p>如何判定哪些维度是主要的成分呢? 我们来看一个 2 维的例子.</p>
+<p><img src="/figures/pca_01.png" alt="Original Data"></p>
+<p>对于上图中的数据点, 我们可以找到数据离散程度最大的方向, 进而确定其他与之垂直的方向 (图中的黑色箭头).</p>
+<p><img src="/figures/pca_02.png" alt="Rotated Data"></p>
+<p>根据刚才获得的方向, 我们可以对原始的数据进行旋转, 这样我们就获得了图 2. </p>
+<p>假设我们的机器只能处理 1 维的数据, 那我们就可以选择横向的数据, 进而舍弃纵向的数据, 因为相比之下, 前者更为体现了更多的信息, 更为重要.</p>
+<p>所谓的主成分分析就是通过分析不同维度的重要性, 为计算者筛选维度提供有力的支撑. 至于完更为详尽的相关内容, 可以查阅如下的 <a href="https://www.wikiwand.com/zh-cn/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90" target="_blank" rel="external">Wiki 词条</a> 作进一步了解.</p>
+<h2 id="4-后记"><a href="#4-后记" class="headerlink" title="4. 后记"></a>4. 后记</h2><p>如本文开头所说的, 我们只是蜻蜓点水式的介绍了几个最为基本的统计学习模型. 如果对于上述的内容还有无法理解的内容, 可以去仔细阅读上文提到的 <a href="https://book.douban.com/subject/26430936/" target="_blank" rel="external"><em>统计学习导论</em></a> 一书.</p>
+<p>如果对于 <a href="https://book.douban.com/subject/26430936/" target="_blank" rel="external"><em>统计学习导论</em></a> 中提到的内容, 尤其是涉及统计知识的部分感到困惑, 可以去学习 <a href="http://www.math.pku.edu.cn/teachers/xirb/Courses/statprobB/statprobB2017.html" target="_blank" rel="external">Ruibin Xi 老师的统计课件</a>, 内容足够详尽, 且足够平易近人.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/XanthosisJYW" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:xanthosis.jyw@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <!-- Config -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": { 
+        preferredFont: "TeX", 
+        availableFonts: ["STIX","TeX"], 
+        linebreaks: { automatic:true }, 
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) 
+    },
+    tex2jax: { 
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ], 
+        processEscapes: true, 
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {  
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, 
+        Macros: { href: "{}" } 
+    },
+    messageStyle: "none"
+    }); 
+</script>
+
+<!-- Add has-jax Class-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<!-- Config CDN -->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 Xanthosis<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://xanthosisjyw-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+
+</body>
+
+</html>
